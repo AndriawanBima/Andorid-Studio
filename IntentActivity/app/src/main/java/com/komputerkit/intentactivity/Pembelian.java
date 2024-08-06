@@ -24,9 +24,15 @@ public class Pembelian extends AppCompatActivity {
             return insets;
         });
         load();
+        ambilData();
     }
 
     public void load() {
-        tvbarang = findViewById(R.id.tvBarang);
+        tvbarang = findViewById(R.id.tvPembelian);
+    }
+
+    public void ambilData() {
+        String ambil = getIntent().getStringExtra("ISI");
+        tvbarang.setText(ambil);
     }
 }

@@ -1,6 +1,7 @@
 package com.komputerkit.sqlitedatabase;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -29,6 +30,14 @@ public class Database extends SQLiteOpenHelper {
         }
     }
 
+    Cursor select(String sql) {
+        try {
+            return db.rawQuery(sql,null);
+        }catch (Exception e) {
+            return null;
+        }
+    }
+
     public void buatTabel() {
         String tblbarang = "CREATE TABLE \"tblbarang\" (\n" +
                 "\t\"idbarang\"\tINTEGER,\n" +
@@ -42,12 +51,12 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }

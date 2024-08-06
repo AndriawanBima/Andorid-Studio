@@ -82,11 +82,11 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvBarang"
                 android:layout_width="match_parent"
-                android:layout_heigth="wrap_content"
-                tools:listitem="@layout/item_barang"
                 android:layout_height="match_parent"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                tools:listitem="@layout/item_barang" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
